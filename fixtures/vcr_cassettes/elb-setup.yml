@@ -1,0 +1,617 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://elasticloadbalancing.sa-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=DescribeLoadBalancers&Version=2012-06-01
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=utf-8
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.6.38 ruby/2.3.1 x86_64-darwin15
+      X-Amz-Date:
+      - 20170112T182834Z
+      X-Amz-Content-Sha256:
+      - 236069f72bf74f0c7ddff0a34b0defa8a21d1d6a897e588764e1b2ff6319f94a
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=111111111111/20170112/sa-east-1/elasticloadbalancing/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date, Signature=cd5375485cacdad502c9ae2366f5ab5d8c24fa7e0ab0d9d82de0b2593023392a
+      Content-Length:
+      - '47'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - edeeaa5f-d8f4-11e6-8071-ed1c1bc4d23b
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '2114'
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Thu, 12 Jan 2017 18:28:35 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <DescribeLoadBalancersResponse xmlns="http://elasticloadbalancing.amazonaws.com/doc/2012-06-01/">
+          <DescribeLoadBalancersResult>
+            <LoadBalancerDescriptions>
+              <member>
+                <VPCId>vpc-8f0019ea</VPCId>
+                <CanonicalHostedZoneNameID>Z2P70J7HTTTPLU</CanonicalHostedZoneNameID>
+                <Scheme>internet-facing</Scheme>
+                <Instances/>
+                <Policies>
+                  <AppCookieStickinessPolicies/>
+                  <LBCookieStickinessPolicies/>
+                  <OtherPolicies/>
+                </Policies>
+                <AvailabilityZones>
+                  <member>sa-east-1a</member>
+                </AvailabilityZones>
+                <DNSName>lb-1-2069710765.sa-east-1.elb.amazonaws.com</DNSName>
+                <BackendServerDescriptions/>
+                <SourceSecurityGroup>
+                  <OwnerAlias>123456789012</OwnerAlias>
+                  <GroupName>default_elb_623306e1-2dd9-3d43-b10d-da5d3df14af2</GroupName>
+                </SourceSecurityGroup>
+                <LoadBalancerName>lb-1</LoadBalancerName>
+                <ListenerDescriptions>
+                  <member>
+                    <Listener>
+                      <InstancePort>80</InstancePort>
+                      <InstanceProtocol>TCP</InstanceProtocol>
+                      <Protocol>TCP</Protocol>
+                      <LoadBalancerPort>80</LoadBalancerPort>
+                    </Listener>
+                    <PolicyNames/>
+                  </member>
+                </ListenerDescriptions>
+                <HealthCheck>
+                  <UnhealthyThreshold>2</UnhealthyThreshold>
+                  <Interval>30</Interval>
+                  <HealthyThreshold>10</HealthyThreshold>
+                  <Timeout>5</Timeout>
+                  <Target>TCP:80</Target>
+                </HealthCheck>
+                <CreatedTime>2017-01-12T00:45:12.090Z</CreatedTime>
+                <Subnets>
+                  <member>subnet-0af6436e</member>
+                </Subnets>
+                <SecurityGroups>
+                  <member>sg-0ce2ad68</member>
+                </SecurityGroups>
+                <CanonicalHostedZoneName>lb-1-2069710765.sa-east-1.elb.amazonaws.com</CanonicalHostedZoneName>
+              </member>
+            </LoadBalancerDescriptions>
+          </DescribeLoadBalancersResult>
+          <ResponseMetadata>
+            <RequestId>edeeaa5f-d8f4-11e6-8071-ed1c1bc4d23b</RequestId>
+          </ResponseMetadata>
+        </DescribeLoadBalancersResponse>
+    http_version: 
+  recorded_at: Thu, 12 Jan 2017 18:28:35 GMT
+- request:
+    method: post
+    uri: https://elasticloadbalancing.sa-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=DescribeTags&LoadBalancerNames.member.1=lb-1&Version=2012-06-01
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=utf-8
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.6.38 ruby/2.3.1 x86_64-darwin15
+      X-Amz-Date:
+      - 20170112T182835Z
+      X-Amz-Content-Sha256:
+      - 667b7cad12519b7eb3be43722330c19a8cc170d896753a4bebaab30d44d93801
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=111111111111/20170112/sa-east-1/elasticloadbalancing/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date, Signature=9786866fbbd3905a7610162cc22f4f200243be639288787e29df0cfe0bfb3371
+      Content-Length:
+      - '70'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - ee5de6f5-d8f4-11e6-8071-ed1c1bc4d23b
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '523'
+      Date:
+      - Thu, 12 Jan 2017 18:28:36 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <DescribeTagsResponse xmlns="http://elasticloadbalancing.amazonaws.com/doc/2012-06-01/">
+          <DescribeTagsResult>
+            <TagDescriptions>
+              <member>
+                <LoadBalancerName>lb-1</LoadBalancerName>
+                <Tags>
+                  <member>
+                    <Value>lb-1</Value>
+                    <Key>Name</Key>
+                  </member>
+                </Tags>
+              </member>
+            </TagDescriptions>
+          </DescribeTagsResult>
+          <ResponseMetadata>
+            <RequestId>ee5de6f5-d8f4-11e6-8071-ed1c1bc4d23b</RequestId>
+          </ResponseMetadata>
+        </DescribeTagsResponse>
+    http_version: 
+  recorded_at: Thu, 12 Jan 2017 18:28:36 GMT
+- request:
+    method: post
+    uri: https://ec2.sa-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=DescribeSubnets&SubnetId.1=subnet-0af6436e&Version=2016-11-15
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=utf-8
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.6.38 ruby/2.3.1 x86_64-darwin15
+      X-Amz-Date:
+      - 20170112T182836Z
+      X-Amz-Content-Sha256:
+      - 2b7e0c9eaa89b98b70b3784bc41b7b21bda0b808db0c80cc18e8000626e0d142
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=111111111111/20170112/sa-east-1/ec2/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date, Signature=597b70d356d258276a5e9d5214f77e81ab2376d51892b0fdc7930fea168a7a6c
+      Content-Length:
+      - '68'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Thu, 12 Jan 2017 18:28:36 GMT
+      Server:
+      - AmazonEC2
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <DescribeSubnetsResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+            <requestId>d0781251-01c0-4784-8d9b-6dfb90e57402</requestId>
+            <subnetSet>
+                <item>
+                    <subnetId>subnet-0af6436e</subnetId>
+                    <state>available</state>
+                    <vpcId>vpc-8f0019ea</vpcId>
+                    <cidrBlock>172.31.0.0/20</cidrBlock>
+                    <ipv6CidrBlockAssociationSet/>
+                    <availableIpAddressCount>4090</availableIpAddressCount>
+                    <availabilityZone>sa-east-1a</availabilityZone>
+                    <defaultForAz>true</defaultForAz>
+                    <mapPublicIpOnLaunch>true</mapPublicIpOnLaunch>
+                    <assignIpv6AddressOnCreation>false</assignIpv6AddressOnCreation>
+                </item>
+            </subnetSet>
+        </DescribeSubnetsResponse>
+    http_version: 
+  recorded_at: Thu, 12 Jan 2017 18:28:37 GMT
+- request:
+    method: post
+    uri: https://ec2.sa-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=DescribeSecurityGroups&GroupId.1=sg-0ce2ad68&Version=2016-11-15
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=utf-8
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.6.38 ruby/2.3.1 x86_64-darwin15
+      X-Amz-Date:
+      - 20170112T182837Z
+      X-Amz-Content-Sha256:
+      - a598e638d441e5df353a1e19707221b07f439cbff6de6518dd3fe84683252b33
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=111111111111/20170112/sa-east-1/ec2/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date, Signature=9d89aca07377efc85e5636a8c947e91483ae5f2a9f3da3eb10b3d002331ca60f
+      Content-Length:
+      - '70'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Thu, 12 Jan 2017 18:28:37 GMT
+      Server:
+      - AmazonEC2
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <DescribeSecurityGroupsResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+            <requestId>89d25a6e-5625-41b6-9729-a78f88744467</requestId>
+            <securityGroupInfo>
+                <item>
+                    <ownerId>123456789012</ownerId>
+                    <groupId>sg-0ce2ad68</groupId>
+                    <groupName>default_elb_623306e1-2dd9-3d43-b10d-da5d3df14af2</groupName>
+                    <groupDescription>ELB created security group used when no security group is specified during ELB creation - modifications could impact traffic to future ELBs</groupDescription>
+                    <vpcId>vpc-8f0019ea</vpcId>
+                    <ipPermissions>
+                        <item>
+                            <ipProtocol>tcp</ipProtocol>
+                            <fromPort>80</fromPort>
+                            <toPort>80</toPort>
+                            <groups/>
+                            <ipRanges>
+                                <item>
+                                    <cidrIp>0.0.0.0/0</cidrIp>
+                                </item>
+                            </ipRanges>
+                            <ipv6Ranges/>
+                            <prefixListIds/>
+                        </item>
+                    </ipPermissions>
+                    <ipPermissionsEgress>
+                        <item>
+                            <ipProtocol>-1</ipProtocol>
+                            <groups/>
+                            <ipRanges>
+                                <item>
+                                    <cidrIp>0.0.0.0/0</cidrIp>
+                                </item>
+                            </ipRanges>
+                            <ipv6Ranges/>
+                            <prefixListIds/>
+                        </item>
+                    </ipPermissionsEgress>
+                </item>
+            </securityGroupInfo>
+        </DescribeSecurityGroupsResponse>
+    http_version: 
+  recorded_at: Thu, 12 Jan 2017 18:28:38 GMT
+- request:
+    method: post
+    uri: https://elasticloadbalancing.sa-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=DescribeLoadBalancers&Version=2012-06-01
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=utf-8
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.6.38 ruby/2.3.1 x86_64-darwin15
+      X-Amz-Date:
+      - 20170112T182838Z
+      X-Amz-Content-Sha256:
+      - 236069f72bf74f0c7ddff0a34b0defa8a21d1d6a897e588764e1b2ff6319f94a
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=111111111111/20170112/sa-east-1/elasticloadbalancing/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date, Signature=f8aac95716d9586cb19f5bfe7aab83598987f08947d0a347768111cedcaea0c9
+      Content-Length:
+      - '47'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - f03b0bb0-d8f4-11e6-9df5-d35ef90998c0
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '2114'
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Thu, 12 Jan 2017 18:28:39 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <DescribeLoadBalancersResponse xmlns="http://elasticloadbalancing.amazonaws.com/doc/2012-06-01/">
+          <DescribeLoadBalancersResult>
+            <LoadBalancerDescriptions>
+              <member>
+                <VPCId>vpc-8f0019ea</VPCId>
+                <CanonicalHostedZoneNameID>Z2P70J7HTTTPLU</CanonicalHostedZoneNameID>
+                <Scheme>internet-facing</Scheme>
+                <Instances/>
+                <Policies>
+                  <AppCookieStickinessPolicies/>
+                  <LBCookieStickinessPolicies/>
+                  <OtherPolicies/>
+                </Policies>
+                <AvailabilityZones>
+                  <member>sa-east-1a</member>
+                </AvailabilityZones>
+                <DNSName>lb-1-2069710765.sa-east-1.elb.amazonaws.com</DNSName>
+                <BackendServerDescriptions/>
+                <SourceSecurityGroup>
+                  <OwnerAlias>123456789012</OwnerAlias>
+                  <GroupName>default_elb_623306e1-2dd9-3d43-b10d-da5d3df14af2</GroupName>
+                </SourceSecurityGroup>
+                <LoadBalancerName>lb-1</LoadBalancerName>
+                <ListenerDescriptions>
+                  <member>
+                    <Listener>
+                      <InstancePort>80</InstancePort>
+                      <InstanceProtocol>TCP</InstanceProtocol>
+                      <Protocol>TCP</Protocol>
+                      <LoadBalancerPort>80</LoadBalancerPort>
+                    </Listener>
+                    <PolicyNames/>
+                  </member>
+                </ListenerDescriptions>
+                <HealthCheck>
+                  <UnhealthyThreshold>2</UnhealthyThreshold>
+                  <Interval>30</Interval>
+                  <HealthyThreshold>10</HealthyThreshold>
+                  <Timeout>5</Timeout>
+                  <Target>TCP:80</Target>
+                </HealthCheck>
+                <CreatedTime>2017-01-12T00:45:12.090Z</CreatedTime>
+                <Subnets>
+                  <member>subnet-0af6436e</member>
+                </Subnets>
+                <SecurityGroups>
+                  <member>sg-0ce2ad68</member>
+                </SecurityGroups>
+                <CanonicalHostedZoneName>lb-1-2069710765.sa-east-1.elb.amazonaws.com</CanonicalHostedZoneName>
+              </member>
+            </LoadBalancerDescriptions>
+          </DescribeLoadBalancersResult>
+          <ResponseMetadata>
+            <RequestId>f03b0bb0-d8f4-11e6-9df5-d35ef90998c0</RequestId>
+          </ResponseMetadata>
+        </DescribeLoadBalancersResponse>
+    http_version: 
+  recorded_at: Thu, 12 Jan 2017 18:28:39 GMT
+- request:
+    method: post
+    uri: https://elasticloadbalancing.sa-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=DescribeTags&LoadBalancerNames.member.1=lb-1&Version=2012-06-01
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=utf-8
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.6.38 ruby/2.3.1 x86_64-darwin15
+      X-Amz-Date:
+      - 20170112T182839Z
+      X-Amz-Content-Sha256:
+      - 667b7cad12519b7eb3be43722330c19a8cc170d896753a4bebaab30d44d93801
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=111111111111/20170112/sa-east-1/elasticloadbalancing/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date, Signature=4a48edc7288574b4793a3175ba76a08a588af17e5cbccb788ad0787b73fad839
+      Content-Length:
+      - '70'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - f0bb5f0e-d8f4-11e6-8cdc-6d7bc5c85bf0
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '523'
+      Date:
+      - Thu, 12 Jan 2017 18:28:40 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <DescribeTagsResponse xmlns="http://elasticloadbalancing.amazonaws.com/doc/2012-06-01/">
+          <DescribeTagsResult>
+            <TagDescriptions>
+              <member>
+                <LoadBalancerName>lb-1</LoadBalancerName>
+                <Tags>
+                  <member>
+                    <Value>lb-1</Value>
+                    <Key>Name</Key>
+                  </member>
+                </Tags>
+              </member>
+            </TagDescriptions>
+          </DescribeTagsResult>
+          <ResponseMetadata>
+            <RequestId>f0bb5f0e-d8f4-11e6-8cdc-6d7bc5c85bf0</RequestId>
+          </ResponseMetadata>
+        </DescribeTagsResponse>
+    http_version: 
+  recorded_at: Thu, 12 Jan 2017 18:28:40 GMT
+- request:
+    method: post
+    uri: https://ec2.sa-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=DescribeSubnets&SubnetId.1=subnet-0af6436e&Version=2016-11-15
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=utf-8
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.6.38 ruby/2.3.1 x86_64-darwin15
+      X-Amz-Date:
+      - 20170112T182840Z
+      X-Amz-Content-Sha256:
+      - 2b7e0c9eaa89b98b70b3784bc41b7b21bda0b808db0c80cc18e8000626e0d142
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=111111111111/20170112/sa-east-1/ec2/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date, Signature=d221089d6ad7c06807358e27045e141c0b32e7444fe3ffbcd512483d13964a78
+      Content-Length:
+      - '68'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Thu, 12 Jan 2017 18:28:40 GMT
+      Server:
+      - AmazonEC2
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <DescribeSubnetsResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+            <requestId>3db10a9c-dd9d-4b58-bf49-e73e0a09aa62</requestId>
+            <subnetSet>
+                <item>
+                    <subnetId>subnet-0af6436e</subnetId>
+                    <state>available</state>
+                    <vpcId>vpc-8f0019ea</vpcId>
+                    <cidrBlock>172.31.0.0/20</cidrBlock>
+                    <ipv6CidrBlockAssociationSet/>
+                    <availableIpAddressCount>4090</availableIpAddressCount>
+                    <availabilityZone>sa-east-1a</availabilityZone>
+                    <defaultForAz>true</defaultForAz>
+                    <mapPublicIpOnLaunch>true</mapPublicIpOnLaunch>
+                    <assignIpv6AddressOnCreation>false</assignIpv6AddressOnCreation>
+                </item>
+            </subnetSet>
+        </DescribeSubnetsResponse>
+    http_version: 
+  recorded_at: Thu, 12 Jan 2017 18:28:41 GMT
+- request:
+    method: post
+    uri: https://ec2.sa-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=DescribeSecurityGroups&GroupId.1=sg-0ce2ad68&Version=2016-11-15
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=utf-8
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.6.38 ruby/2.3.1 x86_64-darwin15
+      X-Amz-Date:
+      - 20170112T182841Z
+      X-Amz-Content-Sha256:
+      - a598e638d441e5df353a1e19707221b07f439cbff6de6518dd3fe84683252b33
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=111111111111/20170112/sa-east-1/ec2/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date, Signature=1be7530995221ea6fd714c2dd45f1316deb002d0f907d139e4a2711ba1bb9423
+      Content-Length:
+      - '70'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Thu, 12 Jan 2017 18:28:41 GMT
+      Server:
+      - AmazonEC2
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <DescribeSecurityGroupsResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+            <requestId>2ae96884-f1d5-4953-afbd-cce1ae29d9f1</requestId>
+            <securityGroupInfo>
+                <item>
+                    <ownerId>123456789012</ownerId>
+                    <groupId>sg-0ce2ad68</groupId>
+                    <groupName>default_elb_623306e1-2dd9-3d43-b10d-da5d3df14af2</groupName>
+                    <groupDescription>ELB created security group used when no security group is specified during ELB creation - modifications could impact traffic to future ELBs</groupDescription>
+                    <vpcId>vpc-8f0019ea</vpcId>
+                    <ipPermissions>
+                        <item>
+                            <ipProtocol>tcp</ipProtocol>
+                            <fromPort>80</fromPort>
+                            <toPort>80</toPort>
+                            <groups/>
+                            <ipRanges>
+                                <item>
+                                    <cidrIp>0.0.0.0/0</cidrIp>
+                                </item>
+                            </ipRanges>
+                            <ipv6Ranges/>
+                            <prefixListIds/>
+                        </item>
+                    </ipPermissions>
+                    <ipPermissionsEgress>
+                        <item>
+                            <ipProtocol>-1</ipProtocol>
+                            <groups/>
+                            <ipRanges>
+                                <item>
+                                    <cidrIp>0.0.0.0/0</cidrIp>
+                                </item>
+                            </ipRanges>
+                            <ipv6Ranges/>
+                            <prefixListIds/>
+                        </item>
+                    </ipPermissionsEgress>
+                </item>
+            </securityGroupInfo>
+        </DescribeSecurityGroupsResponse>
+    http_version: 
+  recorded_at: Thu, 12 Jan 2017 18:28:42 GMT
+recorded_with: VCR 3.0.3

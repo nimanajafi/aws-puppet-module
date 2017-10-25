@@ -1,0 +1,102 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://elasticloadbalancing.sa-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=CreateLoadBalancer&AvailabilityZones.member.1=sa-east-1a&Listeners.member.1.InstancePort=80&Listeners.member.1.LoadBalancerPort=80&Listeners.member.1.Protocol=TCP&LoadBalancerName=lb-1&Scheme=internet-facing&SecurityGroups=&Subnets=&Tags.member.1.Key=Name&Tags.member.1.Value=lb-1&Version=2012-06-01
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=utf-8
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.6.38 ruby/2.3.1 x86_64-darwin15
+      X-Amz-Date:
+      - 20170112T183657Z
+      X-Amz-Content-Sha256:
+      - f0f21a0b0eea82f184d91ce551406194c9a85495a1afb46b0bf20a0eeeabeced
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=111111111111/20170112/sa-east-1/elasticloadbalancing/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date, Signature=88cc8056f70853377592d483b70c63864b99053b39db9b3ed9236a961a7cfade
+      Content-Length:
+      - '306'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 1943162d-d8f6-11e6-a828-4f226993f0a0
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '357'
+      Date:
+      - Thu, 12 Jan 2017 18:36:58 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <CreateLoadBalancerResponse xmlns="http://elasticloadbalancing.amazonaws.com/doc/2012-06-01/">
+          <CreateLoadBalancerResult>
+            <DNSName>lb-1-836530285.sa-east-1.elb.amazonaws.com</DNSName>
+          </CreateLoadBalancerResult>
+          <ResponseMetadata>
+            <RequestId>1943162d-d8f6-11e6-a828-4f226993f0a0</RequestId>
+          </ResponseMetadata>
+        </CreateLoadBalancerResponse>
+    http_version: 
+  recorded_at: Thu, 12 Jan 2017 18:36:59 GMT
+- request:
+    method: post
+    uri: https://ec2.sa-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=DescribeInstances&Filter.1.Name=tag%3AName&Filter.1.Value.1=web-1&Filter.2.Name=instance-state-name&Filter.2.Value.1=pending&Filter.2.Value.2=running&Version=2016-11-15
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=utf-8
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.6.38 ruby/2.3.1 x86_64-darwin15
+      X-Amz-Date:
+      - 20170112T183659Z
+      X-Amz-Content-Sha256:
+      - c56603cbdf45c89429925da0c8e72355856b953cba3fe6d7726125c3c3c7b073
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=111111111111/20170112/sa-east-1/ec2/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date, Signature=af05f831cbf8dbb3c5af46412651fcf37880a4a26c05f2bc9b761c48695be20d
+      Content-Length:
+      - '175'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Thu, 12 Jan 2017 18:36:59 GMT
+      Server:
+      - AmazonEC2
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+            <requestId>fd7c968d-19c5-45f2-b233-bbec5a41c986</requestId>
+            <reservationSet/>
+        </DescribeInstancesResponse>
+    http_version: 
+  recorded_at: Thu, 12 Jan 2017 18:37:00 GMT
+recorded_with: VCR 3.0.3
